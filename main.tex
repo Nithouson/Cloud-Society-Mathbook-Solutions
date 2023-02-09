@@ -1,0 +1,71 @@
+\documentclass{book} %book,article,report,letter
+\usepackage{amsmath} %宏包
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{amsthm}
+\usepackage{indentfirst}
+\usepackage{geometry}
+\usepackage{color}
+%\geometry{left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\newtheorem{dfn}{定义}[chapter]
+\newtheorem{axi}[dfn]{公理}
+\newtheorem{thm}[dfn]{定理}
+\newtheorem{pro}[dfn]{命题}
+\newtheorem{lem}[dfn]{引理}
+\newtheorem{col}[dfn]{推论}
+
+
+%导言区
+\begin{document}
+\pagenumbering{Roman}
+\Large
+
+\title{\textbf{云学社数学习题解答集\\ Cloud Society Solutions to Texts in Mathematics}}  %%书名
+\author{Cloud Society} %%作者
+
+%\date{} %%如果没有这句，会生成时间
+\maketitle
+\large
+
+\renewcommand{\contentsname}{\centerline{目录}}
+\tableofcontents  %%生成目录
+
+\pagenumbering{arabic}
+\setlength{\parindent}{0pt}
+
+\mainmatter
+
+\part{数学基础}
+
+\part{代数}
+\chapter{Axler: Linear Algebra Done Right}
+\input{algebra/Axler_LADR}
+
+\chapter{赵春来、徐明曜：抽象代数}
+\input{algebra/ZhaoXu_AA}
+
+\chapter{徐竞、徐明曜：近世代数初步}
+\input{algebra/XuXu_EMA}
+
+\part{几何与拓扑}
+
+
+\part{组合学}
+\chapter{Brualdi: Introductory Combinatorics}
+\input{combinatorics/Brualdi_IC}
+
+\part{概率论}
+
+
+\part{计算数学}
+
+\chapter{Sipser: Introduction to Theory of Computation}
+\input{computational/Sipser_ITOC}
+
+\end{document}
+

@@ -1,0 +1,25 @@
+\section{绪论}
+\section{正则语言}
+\section{上下文无关文法}
+\section{Church-Turing论题}
+
+\section{可判定性}
+
+\par \textbf{3}. 证明$ALL_{DFA}$可判定.
+\par 证明: 类似于$E_{DFA}$的判别, 若所有起始状态出发的可达状态均为接受状态则接受, 否则拒绝.
+
+\section{可归约性}
+
+\par \textbf{1}. 证明$EQ_{CFG}$不可判定.
+\par 证明: 利用计算历史归约可证明$ALL_{CFG}$不可判定. 设图灵机$R$判定$EQ_{CFG}$, 构造图灵机$S$判定$ALL_{CFG}$:
+\par S=``对于输入$<G>$,$G$是CFG:
+\par \quad 1.在输入$<G,G_1>$上运行$R$, $G_1$是生成$\Sigma^*$的CFG;
+\par \quad 2.$R$接受,则接受; $R$拒绝, 则拒绝.''
+\par 这与$ALL_{CFG}$不可判定矛盾.
+
+\par \textbf{2}. 证明$EQ_{CFG}$补图灵可识别.
+\par 证明: 构造图灵机$S$识别$\overline{EQ_{CFG}}$:
+\par S=``对于输入$<G_1,G_2>$,$G_1,G_2$是CFG: 遍历$\Sigma^*$中的字符串, 对每个字符串s, 调用判定$A_{CFG}$的图灵机R, 若R对于$<G_1,s>,<G_2,s>$恰好接受一个, 则接受.''
+
+
+\section{可计算性理论高级专题}

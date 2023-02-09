@@ -1,0 +1,35 @@
+\section{群、环、体、域的基本概念}
+
+\subsection{预备知识}
+\par \textbf{1}. 设$X$和$Y$是两个集合, $f:X \to Y$和$g:Y \to X$ 是两个映射. 若$g \circ f=id_X$, 则称$g$为$f$的一个左逆; 若$f \circ g=id_Y$, 则称$g$为$f$的一个右逆. 证明:
+(1) $f$有左逆当且仅当$f$是单射;
+(2) $f$有右逆当且仅当$f$是满射;
+(3) $f$有逆当且仅当$f$是双射;
+(4) 若$f$有左逆$g$及右逆$h$, 则$g=h$;
+(5) 若$f$有逆, 则$f$的逆唯一, 记作$f^{-1}$;
+(6) 若$f$有逆, 则$(f^{-1})^{-1}=f$.
+
+\par 证明: (1) 必要性:设$g\circ f=id_X$, 若$f(x_1)=f(x_2)$,  $x_1,x_2\in X$, 则$x_1=g\circ f(x_1)=g\circ f(x_2)=x_2$, 故$f$为单射; 充分性:设$f$为单射, 令$g:Y\to X$
+\begin{equation*}
+g(y)=
+\begin{cases}
+f^{-1}(y),& y\in f(X)\\
+\text{任意}a\in X, & y\notin f(X)
+\end{cases}
+\end{equation*}
+则$g\circ f=id_X$.
+(2) 必要性:设$f\circ g=id_Y$, $\forall y\in Y$, $f(g(y))=y$,故$f$为满射; 充分性:设$f$为满射, 令$g:Y\to X$, 对$y\in Y$, 任取$a_y\in f^{-1}(y)$, 令$g(y)=a_y$, 则$f\circ g=id_Y$.
+(3) 必要性:由(1)(2)之必要性成立; 充分性: $\forall y\in Y$,$f^{-1}(y)$($y$的原像)唯一. 令$g(y)=f^{-1}(y)$,则$g$是$f$的逆.
+(4) $g=g\circ(f\circ h)=(g\circ f)\circ h=h$.
+(5) 由(4)即得.
+(6) 由$f\circ f^{-1}=id_Y, f^{-1}\circ f=id_X$, $f$是$f^{-1}$的逆.
+
+\par \textbf{2}. 举例说明等价关系定义中的三个条件相互独立.
+\par 解: 考虑$\mathbb{Z}$上的如下关系:
+(1)小于等于关系(不满足对称性);
+(2)差的绝对值小于等于2(不满足传递性);
+(3)乘积是非零平方数(不满足自反性).
+
+\subsection{群的基本概念}
+\subsection{环的基本概念}
+\subsection{体、域的基本概念}

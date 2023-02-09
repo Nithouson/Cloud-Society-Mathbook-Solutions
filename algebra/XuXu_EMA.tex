@@ -1,0 +1,93 @@
+\section{群、环、体、域}
+
+\subsection{半群与群}
+\par \textbf{10}. 设群$G$的每个元素$a$都满足$a^2=e$. 证明: $G$是交换群.
+
+\begin{proof}
+对任意$a,b\in G$, 有
+\begin{equation*}
+a^2b^2=e=(ab)^2.
+\end{equation*}
+上式左乘$a^{-1}$,右乘$b^{-1}$即得$ab=ba$.
+\end{proof}
+
+\par \textbf{14}.
+证明: 偶数阶群中必有元素$a\neq e$, 满足$a^2=e$.
+
+\begin{proof}
+在有限群上定义二元关系: $a=b$或$a=b^{-1}$. 可以验证此为等价关系，且每个等价类至多含两个元素. 考虑偶数阶群的等价类划分，则知含一个元素的等价类有偶数个，即存在$e$以外的元素逆等于它本身。
+\end{proof}
+
+\subsection{环}
+\par \textbf{11}. 设环$R$的非零元素$a,b$满足$aba=0$. 证明: $a$是左零因子或右零因子.
+
+\begin{proof}
+若$ab=0$, 则$a$是左零因子；否则，由$(ab)a=0$知$a$是右零因子.
+\end{proof}
+
+\subsection{体和域}
+\par 略
+
+\section{群}
+\subsection{对称群}
+
+\par \textbf{12}. 证明: 
+\begin{displaymath}
+|A_n|=\frac{|S_n|}{2}.
+\end{displaymath}
+
+\begin{proof}
+考虑$S_n$中全体奇置换到全体偶置换的映射$L_{(12)}:\alpha\mapsto(12)\alpha$, 其良定义性是显然的. 又全体偶置换到全体奇置换的$L_{(12)}$为其逆映射，知其为双射. 从而奇置换与偶置换数目相等.
+\end{proof}
+
+\subsection{子群、生成子群}
+
+\par \textbf{3}.
+设$G$是群，$g\in G$. 令$C_G(g)=\{x\in G| xg=gx\}$，称为$g$在$G$中的中心化子. 证明：$C_G(g)\le G$，且$Z(G)=\bigcap_{g\in G}C_G(g)$.
+
+\begin{proof}
+对$a,b\in C_G(g)$，有$xab=axb=abx$，又由$xa=ax$知$a^{-1}x=xa^{-1}$，从而$ab,a^{-1}\in C_G(g)$, $C_G(g)\le G$. 
+\par $Z(G)=\{x\in G| xg=gx, \forall g\in G\}=\bigcap_{g\in G} \{x\in G| xg=gx\}=\bigcap_{g\in G}C_G(g)$.
+\end{proof}
+
+\par \textbf{8}.
+设$G$是群，$H\le G,K\le G$，证明：$H\cup K \le G\Leftrightarrow H\le K$或$K\le H$.
+
+\begin{proof}
+充分性显然，下证必要性. 用反证法，设$H\backslash K \neq \varnothing$且$K\backslash H \neq \varnothing$，取$a\in H\backslash K$，$b\in K\backslash H$. 由$H\cup K$是子群，$a,b\in H\cup K$, 知$ab \in H\cup K$. 若$ab \in H$，推出$b=a^{-1}ab\in H$，矛盾. 若$ab \in K$，同理得$a\in K$，矛盾. 故$H \subseteq K$或$K \subseteq H$，自然有$H\le K$或$K\le H$.
+\end{proof}
+
+\subsection{陪集、Lagrange定理}
+\par \textbf{7}. 设群$G$非平凡群，且没有非平凡的真子群. 证明: $G$是素数阶循环群.
+
+\begin{proof}
+由$G$非平凡群，存在元素$a\neq e$. 考虑$a$的生成子群$\langle a\rangle$，其至少有$a,e$两个元素，由条件只能有$\langle a\rangle=G$，即$G$是循环群. 
+\par 若$G$为无限群，则同构于整数加法群，其有非平凡真子群；当$n$是合数阶循环群时，存在阶为$n$素因子的元素，其生成子群为$G$的非平凡真子群. 故$G$只能是素数阶循环群.
+\end{proof}
+
+\subsection{正规子群与商群}
+
+\par \textbf{4}.
+设$H$是群$G$的子群，$a\in G$，证明：$aHa^{-1}$是$G$的子群且$aHa^{-1}\cong H$.
+
+\begin{proof}
+$e=aea^{-1}\in aHa^{-1}$，故$aHa^{-1}$非空；对$h_1,h_2\in H$，$ah_1a^{-1}ah_2a^{-1}=ah_1h_2a^{-1}\in H$， $(ah_1a^{-1})^{-1}=ah^{-1}_1a^{-1}\in H$，故$aHa^{-1}$是子群. 
+\par 考虑映射：
+\begin{align*}
+    \phi:H\rightarrow& \ aHa^{-1}\\
+    h\mapsto&  \ aha^{-1}
+\end{align*}
+则由$aHa^{-1}$的定义知$\phi$是满射；由$\phi(h_1h_2)=ah_1h_2a^{-1}=ah_1a^{-1}ah_2a^{-1}=\phi(h_1)\phi(h_2)$知$\phi$是群同态，又由$aha^{-1}=e \Rightarrow h=a^{-1}a=e$，$\phi$是单射，故$\phi$是群同构.
+\end{proof}
+
+\par \textbf{5}. 设$H$是群$G$的子群，证明：若$|H|=k$, 且$G$只有一个$k$阶子群，则$H \unlhd G$.
+
+\begin{proof}
+对任意$a\in G$，由2.4.4题知$aHa^{-1}$是$G$的子群且$|aHa^{-1}|=k$. 若$aHa^{-1}\neq H$，与$G$只有一个$k$阶子群矛盾. 故$aHa^{-1}=H$对任意$a\in G$成立，$H$是$G$的正规子群.
+\end{proof}
+
+\subsection{同态、同态基本定理}
+\subsection{同构定理}
+\subsection{群的直积}
+\subsection{群在集合上的作用}
+\subsection{Sylow定理}
